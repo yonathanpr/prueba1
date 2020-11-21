@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TerritoriesViewDlg" widgetVar="TerritoriesViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTerritoriesTitle}">
+            <h:form id="TerritoriesViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{territoriesController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTerritoriesLabel_territoryID}"/>
+                        <h:outputText value="#{territoriesController.selected.territoryID}" title="#{bundle.ViewTerritoriesTitle_territoryID}"/>
+                        <h:outputText value="#{bundle.ViewTerritoriesLabel_territoryDescription}"/>
+                        <h:outputText value="#{territoriesController.selected.territoryDescription}" title="#{bundle.ViewTerritoriesTitle_territoryDescription}"/>
+                        <h:outputText value="#{bundle.ViewTerritoriesLabel_regionID}"/>
+                        <h:outputText value="#{territoriesController.selected.regionID}" title="#{bundle.ViewTerritoriesTitle_regionID}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TerritoriesViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

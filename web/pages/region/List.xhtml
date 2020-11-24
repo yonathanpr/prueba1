@@ -27,13 +27,13 @@
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+                        <p:column sortBy="#{item.regionID}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRegionTitle_regionID}"/>
                             </f:facet>
                             <h:outputText value="#{item.regionID}"/>
                         </p:column>
-                        <p:column>
+                        <p:column filterBy="#{item.regionDescription}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRegionTitle_regionDescription}"/>
                             </f:facet>

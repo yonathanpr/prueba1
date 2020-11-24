@@ -33,7 +33,7 @@
                             </f:facet>
                             <h:outputText value="#{item.regionID}"/>
                         </p:column>
-                        <p:column>
+                        <p:column filterBy="#{item.regionDescription}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRegionTitle_regionDescription}"/>
                             </f:facet>
